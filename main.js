@@ -1,23 +1,44 @@
 // La recuperation des elements
-const form = document.querySelector("#form");
+const form = document.querySelector("form");
 const username = document.querySelector("#username");
 const firstname = document.querySelector("#firstname");
 const ageInputValue = document.querySelector("#ageInput");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
-const private = document.querySelector("private");
+const private = document.querySelector("#private");
+const linkPrivate = document.querySelector("#linkprivate");
+const submit = document.querySelector("#submit")
+
+
 
 
 // Evenements
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  form_verify();
+  fcheckValidity()
+
+
+if (form.checkValidity()) {
+  // si le formulaire est valide, supprimez l'attribut "disabled" du lien "linkprivate"
+  linkPrivate.style.pointerEvents = "auto"
+  linkPrivate.style.opacity = "100%";
+ }
+
+
 });
 
+
+
+
+
+
+
+
+
 // Functions
-function form_verify() {
+function fcheckValidity() {
   // Obtenir toutes les valeurs des inputs
   const userValue = username.value.trim();
   const firstnameValue = firstname.value.trim();
@@ -155,27 +176,16 @@ function password_verify(passeword) {
   );
 }
 
-// function addEventListener(private) {
-
-//   if (  form_verify() == )
-//    private 
-
-// }
 
 
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
 
-//  ;
-// });
 
-const isValid = form.checkValidity();
 
-if (isValid = form.checkValidity()) {
-  console.log('Le formulaire est entièrement validé');
-} else {
-  console.log('Le formulaire n\'est pas encore entièrement validé');
-}
+
+
+
+
+
 
 
 
