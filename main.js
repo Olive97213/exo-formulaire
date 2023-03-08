@@ -2,7 +2,7 @@
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
 const firstname = document.querySelector("#firstname");
-const ageInputValue = document.querySelector("#ageInput");
+const ageInput = document.querySelector("#ageInput");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
@@ -17,7 +17,7 @@ const submit = document.querySelector("#submit")
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  fcheckValidity()
+  form_verify()
 
 
 if (form.checkValidity()) {
@@ -25,6 +25,12 @@ if (form.checkValidity()) {
   linkPrivate.style.pointerEvents = "auto"
   linkPrivate.style.opacity = "100%";
  }
+else {
+  
+
+
+
+}
 
 
 });
@@ -35,10 +41,8 @@ if (form.checkValidity()) {
 
 
 
-
-
 // Functions
-function fcheckValidity() {
+function form_verify() {
   // Obtenir toutes les valeurs des inputs
   const userValue = username.value.trim();
   const firstnameValue = firstname.value.trim();
@@ -70,7 +74,7 @@ function fcheckValidity() {
     setError(firstname, message);
   } else if (!firstnameValue.match(/^[a-zA-Z]/)) {
     let message = "First Name doit commencer par une lettre";
-    setError(username, message);
+    setError(firstname, message);
   } else {
     let letterNum = firstnameValue.length;
     if (letterNum < 3) {
@@ -175,16 +179,6 @@ function password_verify(passeword) {
     passeword
   );
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
